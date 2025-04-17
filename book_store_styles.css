@@ -1,0 +1,122 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: url('https://i.postimg.cc/V0kDvfQc/image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background: rgba(17, 17, 17, 0.6);
+  box-shadow: 0 0 20px #00ffff;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.book-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.book {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid #00ffff;
+  border-radius: 15px;
+  padding: 15px;
+  width: 220px;
+  box-shadow: 0 0 10px #00ffff;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.book h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.book p {
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.book button {
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.book button:hover {
+  background-color: #00ffff;
+  color: #000;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.cart {
+  background-color: rgba(17, 17, 17, 0.7);
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.cart h2 {
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.cart ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.cart li {
+  background-color: rgba(34, 34, 34, 0.8);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #00ffff;
+}

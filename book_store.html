@@ -1,0 +1,175 @@
+﻿  
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع شراء الكتب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .book {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin: 15px 0;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .book-title {
+            font-family: "Ample", sans-serif;
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        .book-price {
+            font-size: 1.1em;
+            color: #f39c12;
+            margin: 10px 0;
+        }
+
+        .book-description {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .buy-btn:hover {
+            background-color: #2ecc71;
+        }
+
+        .star-rating {
+            font-size: 1.2em;
+            color: #ffcc00;
+        }
+
+        /* قسم الدفع */
+        .payment-section {
+            background-color: #e2e2e2;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .payment-section h2 {
+            color: #333;
+        }
+
+        .payment-info {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .payment-info a {
+            color: #27ae60;
+            text-decoration: none;
+        }
+
+        .payment-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>موقع شراء الكتب</h1>
+    </header>
+
+    <div class="container">
+        <div class="book-list">
+            <!-- الكتاب 1: فن اللامبالاة -->
+            <div class="book">
+                <span class="book-title">فن اللامبالاة</span>
+                <p class="book-description">كتاب "فن اللامبالاة" يناقش كيفية التعامل مع الحياة دون التأثر بالضغوطات والمشاكل اليومية.</p>
+                <span class="book-price">120 ج.م</span>
+                <div class="star-rating">★★★★★</div> <!-- 5 نجوم -->
+                <br>
+                <button class="buy-btn" onclick="redirectToWhatsApp('فن اللامبالاة')">شراء الكتاب</button>
+            </div>
+
+            <!-- الكتاب 2: اللاوعي -->
+            <div class="book">
+                <span class="book-title">اللاوعي</span>
+                <p class="book-description">كتاب "اللاوعي" يستكشف أسرار العقل الباطن وكيفية تأثيره على حياتنا اليومية.</p>
+                <span class="book-price">110 ج.م</span>
+                <div class="star-rating">★★★☆☆</div> <!-- 3 نجوم عشوائي -->
+                <br>
+                <button class="buy-btn" onclick="redirectToWhatsApp('اللاوعي')">شراء الكتاب</button>
+            </div>
+
+            <!-- الكتاب 3: فن الحياة -->
+            <div class="book">
+                <span class="book-title">فن الحياة</span>
+                <p class="book-description">كتاب "فن الحياة" يركز على كيفية عيش حياة مليئة بالسلام الداخلي والتوازن.</p>
+                <span class="book-price">100 ج.م</span>
+                <div class="star-rating">★★☆☆☆</div> <!-- 2 نجوم عشوائي -->
+                <br>
+                <button class="buy-btn" onclick="redirectToWhatsApp('فن الحياة')">شراء الكتاب</button>
+            </div>
+        </div>
+
+        <!-- قسم الدفع -->
+        <div class="payment-section">
+            <h2>طريقة الدفع</h2>
+            <p class="payment-info">الدفع سيتم نقدًا عند الاستلام. للتواصل أو الاستفسار، يمكنك الاتصال على الرقم التالي:</p>
+            <p class="payment-info">رقم الدفع: <strong>01156456702</strong></p>
+            <p class="payment-info">رقم للتواصل: <strong><a href="tel:+201092623555">01092623555</a></strong></p>
+        </div>
+    </div>
+
+    <script>
+        // دالة لتوجيه المستخدم إلى واتساب مع رسالة محددة
+        function redirectToWhatsApp(bookTitle) {
+            const phoneNumber = "201092623555";  // رقم الهاتف الدولي (بدون صفر في البداية)
+            const message = `مرحبًا! أود شراء كتاب "${bookTitle}" من موقع شراء الكتب.`;
+
+            // الرابط الذي يوجه إلى واتساب مع الرسالة
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // فتح الرابط
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+
+</body>
+</html> 
